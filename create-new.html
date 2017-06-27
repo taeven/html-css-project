@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create new contacts</title>
+	<script type="text/javascript" src="./scripts/create-new-script.js"></script>
+	<style type="text/css">
+		html,body{
+			border:none;
+			height: 100%;
+			width: 100%;
+			background-color: #FAFAFA;
+			margin: 0;
+
+		}	
+
+		#iframe-main-container{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+			
+			overflow: hidden;
+		}	
+
+		#title-right-text{
+			/*float: top;*/
+			text-align: center;
+		}
+		#form-container{
+			overflow: hidden;
+			border-radius: 4px;
+			
+			height: 60%;
+			width: 60%;
+		}
+		h2{
+			font-family: sans-serif;
+			color: #4b5961;
+		}
+
+		form{
+			text-align: center;
+		}
+		table{
+			margin: 0 auto;
+			text-align: center;
+		}
+		td.left-col{
+			text-align: right;
+		}
+		td.right-col{
+			text-align: left;
+		}
+		div.line{
+			height: 1px;
+			width: 100%;
+			background: #CFD8DC;
+		}
+
+		button{
+			background: #009688;
+			border:none;
+			color: white;
+			padding-left: 25px;
+			padding-right: 25px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			border-radius: 4px;
+		}
+		label{
+			font-family: sans-serif;
+		}
+
+		input[type="text"]{		
+			border: 1px solid #eaeced;
+			border-radius: 4px;
+			height: 22px;
+			padding-left: 5px;
+
+		}
+		body{
+			background: #f7f9fa;
+		}
+		input[type="radio"] {
+			-webkit-appearance:none;
+			width: 15px;
+			height: 15px;
+			border-radius: 15px;
+			background: #E0F2F1;
+		}
+		
+		input[type="radio"]:checked {
+			width: 15px;
+			height: 15px;
+			border-radius: 15px;
+			background: #00695C;
+		}
+
+		footer{
+			background: #26A69A;
+			width: 100%;
+			height: 10px;
+		}
+		
+
+
+
+
+	</style>
+</head>
+<body>
+	<div id="iframe-main-container">
+
+		<div id="form-container">
+		<div id="title-right-text">
+				<h2>
+				Enter the following details
+				</h2> 
+				<div class="line"></div>
+			</div><br><br>
+			<div id="mn">
+			
+			<form name="create-contact-form" onsubmit="return validate()">
+				<table>
+				
+				
+				<label for="name">Name : </label>
+				
+				
+				<input type="text" name="name" id="name" /><br><br>
+				
+				<label for="phone">Phone no. : </label>
+				
+				<input  type="text" name="phone" id="phone"/><br><br>
+				<tr>
+				
+				<div id="gender">Gender :</div>
+				</tr>
+				<tr>
+				<td class="left-col">
+				<label for="male">Male </label></td>
+				<td class="right-col">
+				<input type="radio" name="gender" id="male" value="1" /><br></td></tr>
+				<tr>
+				<td class="left-col">
+				<label for="female">Female </label></td>
+				<td class="right-col">
+				<input type="radio" name="gender" id="female" value="2" /><br></td></tr>
+				<tr>
+				<td class="left-col">
+				<label for="others">Others </label></td>
+				<td class="right-col">
+				<input type="radio" name="gender" id="others" value="3" /><br></td></tr>
+				</table>
+				<br>
+
+				<button id="submit-contact">Submit</button>
+			</form>
+			<br><br>
+			<div class="line"></div>
+			</div>
+			
+		</div>
+	</div>
+	
+</body>
+
+</html>

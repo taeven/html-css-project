@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mongo connect</title>
+	<script type="text/javascript" src="./jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="./scripts/without-script.js"></script>
+
+<style type="text/css">
+
+
+#main-window{
+	font-family: calibri;
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+
+div{
+	font-family: calibri;
+}
+
+
+
+
+	#leftview{
+		margin: 0;
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 25%;
+		float: left;
+		overflow: hidden;
+	}
+
+
+		#header-contact{	
+			position: relative;
+			flex: none;
+			border-bottom: 1px solid #d4d7d8; 
+			text-align: center;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			padding-top: 10px;
+
+			
+			justify-content: flex-end;
+			color: black;
+			font-size: 20px;
+			height: 40px;
+			width: 100%;
+		}
+		
+
+		#brdr{
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 40px;
+			/*flex-direction: column;
+			flex-grow: 1;*/
+
+			z-index: 1;
+			border-right: 1px solid #ededed;
+		
+			
+		}
+			#searchview{	
+				height: 50px;
+				width: 100%;
+				background: #f9f9f9;
+
+				display: flex;
+
+				align-items: center;
+				justify-content: center;
+				border-bottom:  1px solid #d4d7d8;
+
+				border-right: 1px solid #ededed;
+				/*background-color: #199358;*/
+
+			}
+				#search-box{
+					cursor: text;
+
+					display: flex;
+					background: white;
+					align-items: center;
+					width: 90%;
+					height: 70%;
+					border-radius: 4px;
+					border: 1px solid #eaeced;
+				}
+					#search-icon{
+						width: 7%;
+						height: width;
+						margin-left: 10px;
+					}
+
+					#search-contact{
+
+						width: 70%;
+						height: 20px;
+						margin-left: 10px;
+						padding-left: 10px;
+						margin-right: 5px;
+						outline: none;
+						border:none;
+					}
+			#contact-container{
+				top: 50px;
+				bottom: 0px;
+
+				position: absolute;
+				width: 100%;
+			}
+
+				#create-new-container{
+					cursor: cell;
+					margin-right: auto;
+					margin-top: 7px;
+					display: flex;
+					padding-left: 5px;
+					align-items: center;
+					border: none;
+					border-radius: 4px;
+					height: 40px;
+					overflow: hidden;
+					width: 95%;
+					background: #009688;
+					/*background: blue;*/
+
+				}
+					#create-new-icon{
+						margin-left: 3%;
+						width: 8%;
+						height: width;
+					}
+
+					#create-new-text{
+						display: flex;
+						align-items: center;
+						padding-left: 5px;
+						color: white;
+						font-size: 18px;
+						width: 90%;
+						height: 40px;
+					}
+
+					.line{
+						display: block;
+						margin-top: 7px;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 5px;
+						width: 90%;
+						height: 1px;
+						background: #ECEFF1;
+					}
+
+					#contacts{
+						width: 100%;
+						position: absolute;
+						top: 101px;
+						bottom: 0px;
+						margin: 0;
+						padding: 0;
+						vertical-align: baseline;
+						overflow-y: scroll;
+					}
+					
+					#contacts::-webkit-scrollbar{
+					width: 5px;
+					background: white;
+					}
+
+					#contacts::-webkit-scrollbar-track{
+						border-radius: 5px;
+						background-color: white;
+
+					}
+
+					#contacts::-webkit-scrollbar-thumb{
+						background: #009688;
+					}
+
+			.contact-list-item{
+				display: flex;
+				width: 100%;
+				height: 40px;
+				position: relative;
+				left: 0;
+				right: 6px;
+				color: #4b5961;
+				border-bottom: solid 1px #f2f2f2;
+				text-align: center;
+			}
+				.text-list-item{
+					margin: auto;
+				}
+				
+	#rightview{
+		margin-left: 1px;
+		float: none;
+		height: 100vh;
+		overflow: hidden;
+		
+	}
+		#header-right{
+			height: 40px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+
+			border-left: 1px solid #d4d7d8; 
+			border-bottom: 1px solid #d4d7d8;
+			background-color: #f0f0f0;
+
+		}
+
+		#right-container{
+			height: 100%;
+			width: 100%;
+			overflow:hidden;
+			border:none;
+		}
+			#container-iframe{
+				border:none;
+			}
+
+	
+		button {
+	    width: 95%;
+	    height: 40px;
+	    border: none;
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    /*margin-right: auto;*/
+	    /*display: flex;*/
+	    /*padding-left: 5px;*/
+	    /*justify-content: center;*/
+	    /* text-align: center; */
+	    /* align-items: center; */
+	    margin-top: 1px;
+	    border-radius: 4px;
+	}
+		
+
+	.contact-list-item:hover {
+		background: #f0f0f0;
+		cursor: pointer;
+	}
+	.contact-list-item:click {
+		background: black;
+	}
+
+	/*#contacts:: -webkit-scrollbar{
+		width: 4px;
+	}*/
+html, body, #main-window{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+
+
+</style>
+</head>
+<!-- <frameset cols = "25%,75%" border = "1">
+	<frame name="left"  scrolling= "yes" src="./leftFrame.html"></frame>
+	<frame name="right" scrolling= "no" src="./rightFrame.html"></frame>
+</frameset> -->
+<body>
+<div id="main-window">
+	<div class="leftview" id="leftview" class="leftview">
+		<div class="header-contact" id="header-contact">
+		<div id="contact-header-text">Contacts</div>
+		</div>
+		<div id ="brdr">
+
+			<div id="searchview"  >
+				<div id="search-box">
+				
+					<img src="./img/search.png" id="search-icon" />
+					<input type="text" id="search-contact" placeholder="search contact"/>
+				</div>
+					
+			</div>
+			<div class="contact-container" id="contact-container">
+				<button  id="create-new-container" onclick="createContact()">
+					<img src="./img/plus.png" id="create-new-icon"/>
+					<div id="create-new-text">Create new</div>
+					
+					
+				</button>
+				<div class="line"></div>
+
+				<button onclick="addContact()"> refresh</button>
+				<div id="contacts" >
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="rightview" name="rightview" id="rightview">
+		<div id="header-right">		
+			<div id="header-right-text">Enter the contact details</div>
+
+		</div>
+		<div id="right-container" >
+			<iframe id="container-iframe" height=100% width=100% src="./contact.html">
+			
+				
+			</iframe>
+
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
